@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>View Ingredient</title>
+
+  <link rel="stylesheet" crossorigin="anonymous" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+
+  <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script crossorigin="anonymous" th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+<!--/*@thymesVar id="ingredient" type="guru.springframework.commands.IngredientCommand"*/-->
+<div class="container-fluid" style="margin-top: 20px">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="card">
+
+        <div class="card-body">
+          <h1 class="panel-title">Ingredient</h1>
+          <div class="table-responsive">
+            <table class="table table-hover ">
+              <thead class="thead-inverse">
+              <tr>
+                <th>ID</th>
+                <th>Description</th>
+              </tr>
+              </thead>
+              <tr>
+                <td th:text="${ingredient.id}">334</td>
+                <td th:text="${ingredient.quantity} + ' ' + ${ingredient.uom.uom} + ' ' + ${ingredient.description}">Tasty Goodnees 3</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

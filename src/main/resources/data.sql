@@ -8,6 +8,8 @@ insert into UNIT_OF_MEASURE (uom) values ('pinch');
 insert into UNIT_OF_MEASURE (uom) values ('tablespoon');
 insert into UNIT_OF_MEASURE (uom) values ('teaspoon');
 insert into UNIT_OF_MEASURE (uom) values ('count');
+insert into UNIT_OF_MEASURE (uom) values ('garnish');
+
 
 
 

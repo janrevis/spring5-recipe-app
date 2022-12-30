@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Data
 @EqualsAndHashCode(
-        exclude = {"ingredients", "categories"}
+        exclude = {"ingredients", "categories", "image", "directions"}
 )
 public class Recipe {
 
@@ -25,6 +25,8 @@ public class Recipe {
     private String url;
     @Lob
     private String directions;
+    @Lob
+    Byte[] image;
 
     @Enumerated(EnumType.STRING)
     private Difficulty difficulty;
@@ -40,9 +42,6 @@ public class Recipe {
     )
     private Set<Category> categories = new HashSet<>();
 
-    @Lob
-    private Byte[] image;
-
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
@@ -57,5 +56,9 @@ public class Recipe {
     public void addIngredient(Ingredient ingredient) {
         ingredient.setRecipe(this);
         this.ingredients.add(ingredient);
+    }
+
+    public String toString() {
+        return String.format("Recipe(%d,%s)", getId(), getDescription());
     }
 }

@@ -69,10 +69,14 @@ public class DataLoader implements CommandLineRunner {
 
         Ingredient radish = new Ingredient();
         radish.setDescription("Red radish or jicama slices for garnish (optional)");
-
+        radish.setUom(unitOfMeasureRepository.findByUom("garnish").orElse(null));
         Ingredient chips= new Ingredient();
         chips.setDescription("Tortilla chips");
+        chips.setUom(unitOfMeasureRepository.findByUom("garnish").orElse(null));
 
+        guac.setCookTime(5);
+        guac.setPrepTime(10);
+        guac.setServings(4);
         guac.setDescription("");
         guac.setDifficulty(Difficulty.EASY);
         guac.setDirections(
